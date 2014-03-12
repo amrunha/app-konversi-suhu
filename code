@@ -1,2 +1,57 @@
-app-konversi-suhu
-=================
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AppKonversiSuhu
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string x = comboBox1.Text;
+            if (x == "Kelvin")
+            {
+                int celcius = Int32.Parse(textBox1.Text);
+                double hasil = celcius + 273.15;
+                textBox2.Text += hasil;
+            }
+            else if (x == "Reamur")
+            {
+                int celcius = Int32.Parse(textBox1.Text);
+                double hasil = celcius * 0.8;
+                textBox2.Text += hasil;
+            }
+            else if (x == "Fahrenheit")
+            {
+                int celcius = Int32.Parse(textBox1.Text);
+                double hasil = celcius * 1.8 + 32;
+                textBox2.Text += hasil;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            comboBox1.Text = "";
+        }
+    }
+}
+
